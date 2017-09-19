@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView mNameTextView;
@@ -21,7 +23,11 @@ public class MainActivity extends AppCompatActivity {
         mGithubTextView = (TextView) findViewById(R.id.profile_github);
         mProfilImageView = (ImageView) findViewById(R.id.profile_image);
 
-
+        Picasso.with(this)
+                .load("http://i.imgur.com/DvpvklR.png")
+                .centerCrop()
+                .resize(100,100)
+                .into(mProfilImageView);
 
 
     }
